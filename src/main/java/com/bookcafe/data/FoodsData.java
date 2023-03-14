@@ -5,15 +5,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.bookcafe.model.Products;
+import com.bookcafe.model.Foods;
 
 @Component
-public class ProductData {
+public class FoodsData {
 	
-	public List<Products> getData() {
-		List<Products> products = new ArrayList<>();
+	public List<Foods> getData() {
+		List<Foods> products = new ArrayList<>();
 		
-		Products product1 = new Products();
+		Foods product1 = new Foods();
 		product1.setProductId(101);
 		product1.setName("Crepes");
 		product1.setOrigin("France");
@@ -22,7 +22,7 @@ public class ProductData {
 		product1.setBrief("With Nutella and Banana");
 		products.add(product1);
 		
-		Products product2 = new Products();
+		Foods product2 = new Foods();
 		product2.setProductId(102);
 		product2.setName("Quiche");
 		product2.setOrigin("France");
@@ -31,7 +31,7 @@ public class ProductData {
 		product2.setBrief("With Bacon and Cheese");
 		products.add(product2);
 		
-		Products product3 = new Products();
+		Foods product3 = new Foods();
 		product3.setProductId(103);
 		product3.setName("Waffles");
 		product3.setOrigin("Belgium");
@@ -40,7 +40,7 @@ public class ProductData {
 		product3.setBrief("With Honey and Blueberries");
 		products.add(product3);
 		
-		Products product4 = new Products();
+		Foods product4 = new Foods();
 		product4.setProductId(104);
 		product4.setName("Pizza");
 		product4.setOrigin("Italy");
@@ -49,7 +49,7 @@ public class ProductData {
 		product4.setBrief("With Ham and Tomatoes");
 		products.add(product4);
 		
-		Products product5 = new Products();
+		Foods product5 = new Foods();
 		product5.setProductId(105);
 		product5.setName("Tiramisu");
 		product5.setOrigin("Italy");

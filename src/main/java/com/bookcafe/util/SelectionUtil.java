@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 
 import com.bookcafe.data.BookData;
 import com.bookcafe.data.CartData;
-import com.bookcafe.data.ItemData;
-import com.bookcafe.data.MasterClassData;
-import com.bookcafe.data.ProductData;
+import com.bookcafe.data.BeveragesData;
+import com.bookcafe.data.CookingClassData;
+import com.bookcafe.data.FoodsData;
 import com.bookcafe.data.ReadingClubData;
 import com.bookcafe.dto.BookCart;
 import com.bookcafe.dto.CartList;
@@ -22,16 +22,16 @@ import com.bookcafe.dto.ItemCart;
 import com.bookcafe.dto.ProductCart;
 import com.bookcafe.dto.Selection;
 import com.bookcafe.model.Books;
-import com.bookcafe.model.Items;
-import com.bookcafe.model.MasterClass;
-import com.bookcafe.model.Products;
+import com.bookcafe.model.Beverages;
+import com.bookcafe.model.CookingClass;
+import com.bookcafe.model.Foods;
 import com.bookcafe.model.ReadingClub;
 import com.bookcafe.model.SavedCart;
 import com.bookcafe.repository.BooksRepository;
 import com.bookcafe.repository.CartRepository;
-import com.bookcafe.repository.ItemsRepository;
-import com.bookcafe.repository.MasterclassRepository;
-import com.bookcafe.repository.ProductsRepository;
+import com.bookcafe.repository.BeveragesRepository;
+import com.bookcafe.repository.CookingClassRepository;
+import com.bookcafe.repository.FoodsRepository;
 import com.bookcafe.repository.ReadingclubRepository;
 
 @Component
@@ -41,16 +41,16 @@ public class SelectionUtil {
 	private BookData bookData;
 	
 	@Autowired
-	private ProductData productData;
+	private FoodsData productData;
 	
 	@Autowired
-	private ItemData itemData;
+	private BeveragesData itemData;
 	
 	@Autowired
 	private ReadingClubData clubData;
 	
 	@Autowired
-	private MasterClassData classData;
+	private CookingClassData classData;
 	
 	@Autowired
 	private CartData cartData;
@@ -62,13 +62,13 @@ public class SelectionUtil {
 	public BooksRepository bookRepository;
 	
 	@Autowired
-	public ProductsRepository productsRepository;
+	public FoodsRepository productsRepository;
 	
 	@Autowired
-	public ItemsRepository itemsRepository;
+	public BeveragesRepository itemsRepository;
 	
 	@Autowired
-	public MasterclassRepository masterclassRepository;
+	public CookingClassRepository masterclassRepository;
 	
 	@Autowired
 	public ReadingclubRepository readingclubRepository;
@@ -136,7 +136,7 @@ public class SelectionUtil {
 				CartList cartItem = new CartList();
 				cartItem.setId(productCart.getProductId());
 				cartItem.setQuantity(productCart.getProductQuantity());
-				for(Products product : productsRepository.findAll()) {
+				for(Foods product : productsRepository.findAll()) {
 					if(product.getProductId()==productCart.getProductId()) {
 						cartItem.setName(product.getName());
 						cartItem.setAmt(Integer.parseInt(product.getPrice())*productCart.getProductQuantity());
@@ -151,7 +151,7 @@ public class SelectionUtil {
 				CartList cartItem = new CartList();
 				cartItem.setId(itemCart.getItemId());
 				cartItem.setQuantity(itemCart.getItemQuantity());
-				for(Items item : itemsRepository.findAll()) {
+				for(Beverages item : itemsRepository.findAll()) {
 					if(item.getItemId()==itemCart.getItemId()) {
 						cartItem.setName(item.getName());
 						cartItem.setAmt(Integer.parseInt(item.getPrice())*itemCart.getItemQuantity());
@@ -181,7 +181,7 @@ public class SelectionUtil {
 				CartList cartItem = new CartList();
 				cartItem.setId(classCart.getClassId());
 				cartItem.setQuantity(classCart.getClassQuantity());
-				for(MasterClass mclass : masterclassRepository.findAll()) {
+				for(CookingClass mclass : masterclassRepository.findAll()) {
 					if(mclass.getClassId()==classCart.getClassId()) {
 						cartItem.setName(mclass.getRecipeName()+" For "+mclass.getSuitableFor());
 						cartItem.setAmt(Integer.parseInt(mclass.getPrice())*classCart.getClassQuantity());
@@ -225,7 +225,7 @@ public class SelectionUtil {
 				CartList cartItem = new CartList();
 				cartItem.setId(productCart.getProductId());
 				cartItem.setQuantity(productCart.getProductQuantity());
-				for(Products product : productData.getData()) {
+				for(Foods product : productData.getData()) {
 					if(product.getProductId()==productCart.getProductId()) {
 						cartItem.setName(product.getName());
 						cartItem.setAmt(Integer.parseInt(product.getPrice())*productCart.getProductQuantity());
@@ -240,7 +240,7 @@ public class SelectionUtil {
 				CartList cartItem = new CartList();
 				cartItem.setId(itemCart.getItemId());
 				cartItem.setQuantity(itemCart.getItemQuantity());
-				for(Items item : itemData.getData()) {
+				for(Beverages item : itemData.getData()) {
 					if(item.getItemId()==itemCart.getItemId()) {
 						cartItem.setName(item.getName());
 						cartItem.setAmt(Integer.parseInt(item.getPrice())*itemCart.getItemQuantity());
@@ -270,7 +270,7 @@ public class SelectionUtil {
 				CartList cartItem = new CartList();
 				cartItem.setId(classCart.getClassId());
 				cartItem.setQuantity(classCart.getClassQuantity());
-				for(MasterClass mclass : classData.getData()) {
+				for(CookingClass mclass : classData.getData()) {
 					if(mclass.getClassId()==classCart.getClassId()) {
 						cartItem.setName(mclass.getRecipeName()+" For "+mclass.getSuitableFor());
 						cartItem.setAmt(Integer.parseInt(mclass.getPrice())*classCart.getClassQuantity());

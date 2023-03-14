@@ -5,15 +5,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.bookcafe.model.MasterClass;
+import com.bookcafe.model.CookingClass;
 
 @Component
-public class MasterClassData {
+public class CookingClassData {
 	
-	public List<MasterClass> getData(){
-		List<MasterClass> classList = new ArrayList<>();
+	public List<CookingClass> getData(){
+		List<CookingClass> classList = new ArrayList<>();
 		
-		MasterClass class1 = new MasterClass();
+		CookingClass class1 = new CookingClass();
 		class1.setClassId(2001);
 		class1.setRecipeName("Chocolate Walnut Brownies");
 		class1.setRecipeType("Sweet");
@@ -23,7 +23,7 @@ public class MasterClassData {
 		class1.setPrice("10");
 		classList.add(class1);
 		
-		MasterClass class2 = new MasterClass();
+		CookingClass class2 = new CookingClass();
 		class2.setClassId(2002);
 		class2.setRecipeName("Carrot Cake with Cream Cheese Frosting");
 		class2.setRecipeType("Sweet");
@@ -33,7 +33,7 @@ public class MasterClassData {
 		class2.setPrice("15");
 		classList.add(class2);
 		
-		MasterClass class3 = new MasterClass();
+		CookingClass class3 = new CookingClass();
 		class3.setClassId(2003);
 		class3.setRecipeName("Tricolor Noodles");
 		class3.setRecipeType("Savoury");
@@ -43,7 +43,7 @@ public class MasterClassData {
 		class3.setPrice("10");
 		classList.add(class3);
 		
-		MasterClass class4 = new MasterClass();
+		CookingClass class4 = new CookingClass();
 		class4.setClassId(2004);
 		class4.setRecipeName("Handmade Pasta Bolognese");
 		class4.setRecipeType("Savoury");

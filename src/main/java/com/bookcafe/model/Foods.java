@@ -3,8 +3,8 @@ package com.bookcafe.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="Products")
-public class Products {
+@Document(collection="Foods")
+public class Foods {
 	
 	@Id
 	private int productId;

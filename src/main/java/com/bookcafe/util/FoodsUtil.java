@@ -6,32 +6,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.bookcafe.data.ProductData;
-import com.bookcafe.model.Products;
-import com.bookcafe.repository.ProductsRepository;
+import com.bookcafe.data.FoodsData;
+import com.bookcafe.model.Foods;
+import com.bookcafe.repository.FoodsRepository;
 
 @Component
-public class ProductUtil {
+public class FoodsUtil {
 	
 	@Autowired
-	private ProductData data;
+	private FoodsData data;
 	
 	@Autowired
-	private ProductsRepository productsRepository;
+	private FoodsRepository productsRepository;
 	
 	@Value( "${current.env}" )
 	private String env;
 	
-	public int addNewProduct(Products product) {
-		Products savedProduct = productsRepository.save(product);
+	public int addNewProduct(Foods product) {
+		Foods savedProduct = productsRepository.save(product);
 		return savedProduct.getProductId();
 	}
 	
-	public void removeProduct(Products product) {
+	public void removeProduct(Foods product) {
 		productsRepository.delete(product);
 	}
 	
-	public List<Products> retriveAllProducts() {
+	public List<Foods> retriveAllProducts() {
 		if(env.equalsIgnoreCase("mock")) {
 			return data.getData();
 		} else {

@@ -6,32 +6,32 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.bookcafe.data.MasterClassData;
-import com.bookcafe.model.MasterClass;
-import com.bookcafe.repository.MasterclassRepository;
+import com.bookcafe.data.CookingClassData;
+import com.bookcafe.model.CookingClass;
+import com.bookcafe.repository.CookingClassRepository;
 
 @Component
-public class MasterClassUtil {
+public class CookingClassUtil {
 	
 	@Autowired
-	private MasterClassData data;
+	private CookingClassData data;
 	
 	@Autowired
-	private MasterclassRepository masterclassRepository;
+	private CookingClassRepository masterclassRepository;
 	
 	@Value( "${current.env}" )
 	private String env;
 	
-	public int addNewMasterclass(MasterClass masterClass) {
-		MasterClass savedMasterclass = masterclassRepository.save(masterClass);
+	public int addNewMasterclass(CookingClass masterClass) {
+		CookingClass savedMasterclass = masterclassRepository.save(masterClass);
 		return savedMasterclass.getClassId();
 	}
 	
-	public void removeMasterclass(MasterClass masterClass) {
+	public void removeMasterclass(CookingClass masterClass) {
 		masterclassRepository.delete(masterClass);
 	}
 	
-	public List<MasterClass> retrieveMasterClassDetails() {
+	public List<CookingClass> retrieveMasterClassDetails() {
 		if(env.equalsIgnoreCase("mock")) {
 			return data.getData();
 		} else {

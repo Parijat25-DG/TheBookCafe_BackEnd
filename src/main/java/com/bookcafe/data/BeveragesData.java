@@ -5,15 +5,15 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.bookcafe.model.Items;
+import com.bookcafe.model.Beverages;
 
 @Component
-public class ItemData {
+public class BeveragesData {
 	
-	public List<Items> getData() {
-		List<Items> items = new ArrayList<>();
+	public List<Beverages> getData() {
+		List<Beverages> beverages = new ArrayList<>();
 		
-		Items item1 = new Items();
+		Beverages item1 = new Beverages();
 		item1.setItemId(201);
 		item1.setName("Darjeeling Tea");
 		item1.setQuality("Soothing");
@@ -21,9 +21,9 @@ public class ItemData {
 		item1.setPrice("3");
 		item1.setAccompaniments("Digestive");
 		item1.setTime("Evening");
-		items.add(item1);
+		beverages.add(item1);
 		
-		Items item2 = new Items();
+		Beverages item2 = new Beverages();
 		item2.setItemId(202);
 		item2.setName("Cappucchino");
 		item2.setQuality("Energizing");
@@ -31,9 +31,9 @@ public class ItemData {
 		item2.setPrice("2");
 		item2.setAccompaniments("Maccaroon");
 		item2.setTime("Morning");
-		items.add(item2);
+		beverages.add(item2);
 		
-		Items item3 = new Items();
+		Beverages item3 = new Beverages();
 		item3.setItemId(203);
 		item3.setName("Hot Chocolate");
 		item3.setQuality("Warming");
@@ -41,9 +41,9 @@ public class ItemData {
 		item3.setPrice("3");
 		item3.setAccompaniments("Cookies");
 		item3.setTime("Anytime");
-		items.add(item3);
+		beverages.add(item3);
 
-		Items item4 = new Items();
+		Beverages item4 = new Beverages();
 		item4.setItemId(204);
 		item4.setName("Espresso");
 		item4.setQuality("Energizing");
@@ -51,9 +51,9 @@ public class ItemData {
 		item4.setPrice("2");
 		item4.setAccompaniments("Medallion");
 		item4.setTime("Morning");
-		items.add(item4);
+		beverages.add(item4);
 		
-		Items item5 = new Items();
+		Beverages item5 = new Beverages();
 		item5.setItemId(205);
 		item5.setName("Earl Grey");
 		item5.setQuality("Soothing");
@@ -61,9 +61,9 @@ public class ItemData {
 		item5.setPrice("3");
 		item5.setAccompaniments("Biscuit");
 		item5.setTime("Evening");
-		items.add(item5);
+		beverages.add(item5);
 		
-		return items;
+		return beverages;
 	}
 
 }

@@ -3,9 +3,9 @@ package com.bookcafe.repository;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
-import com.bookcafe.model.Items;
+import com.bookcafe.model.Beverages;
 
 @Repository
-public interface ItemsRepository extends MongoRepository<Items, Integer>{
+public interface BeveragesRepository extends MongoRepository<Beverages, Integer>{
 
 }
