@@ -1,5 +1,6 @@
 package com.bookcafe.model;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Books {
 	
 	@Id
+	private ObjectId _id;
 	private int bookId;
 	private String name;
 	private String author;

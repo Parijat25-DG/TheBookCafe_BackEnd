@@ -17,22 +17,22 @@ import com.bookcafe.util.BeveragesUtil;
 public class BeveragesApiController {
 	
 	@Autowired
-	private BeveragesUtil itemUtil;
+	private BeveragesUtil beveragesUtil;
 	
-	@GetMapping("/getAllItems")
-	public List<Beverages> findAllItems(){
-		return itemUtil.retriveAllItems();
+	@GetMapping("/getAllBeverages")
+	public List<Beverages> findAllBeverages(){
+		return beveragesUtil.retriveAllBeverages();
 	}
 	
-	@PostMapping("/addItem")
-	public String addItem(@RequestBody Beverages item) {
-		return "New Item added with ID : "+itemUtil.addNewItem(item);
+	@PostMapping("/addBeverages")
+	public String addBeverages(@RequestBody Beverages beverages) {
+		return "New Beverages added with ID : "+beveragesUtil.addNewBeverages(beverages);
 	}
 	
-	@PostMapping("/removeItem")
-	public String removeItem(@RequestBody Beverages item) {
-		itemUtil.removeItem(item);
-		return "Item with ID : "+item.getItemId()+" deleted successfully";
+	@PostMapping("/removeBeverages")
+	public String removeBeverages(@RequestBody Beverages beverages) {
+		beveragesUtil.removeBeverages(beverages);
+		return "Beverages with ID : "+beverages.getBeveragesId()+" deleted successfully";
 	}
 	
 }

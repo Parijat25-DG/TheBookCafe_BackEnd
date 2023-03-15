@@ -152,7 +152,7 @@ public class SelectionUtil {
 				cartItem.setId(itemCart.getItemId());
 				cartItem.setQuantity(itemCart.getItemQuantity());
 				for(Beverages item : itemsRepository.findAll()) {
-					if(item.getItemId()==itemCart.getItemId()) {
+					if(item.getBeveragesId()==itemCart.getItemId()) {
 						cartItem.setName(item.getName());
 						cartItem.setAmt(Integer.parseInt(item.getPrice())*itemCart.getItemQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
@@ -241,7 +241,7 @@ public class SelectionUtil {
 				cartItem.setId(itemCart.getItemId());
 				cartItem.setQuantity(itemCart.getItemQuantity());
 				for(Beverages item : itemData.getData()) {
-					if(item.getItemId()==itemCart.getItemId()) {
+					if(item.getBeveragesId()==itemCart.getItemId()) {
 						cartItem.setName(item.getName());
 						cartItem.setAmt(Integer.parseInt(item.getPrice())*itemCart.getItemQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();

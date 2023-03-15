@@ -17,25 +17,25 @@ public class BeveragesUtil {
 	private BeveragesData data;
 	
 	@Autowired
-	private BeveragesRepository itemsRepository;
+	private BeveragesRepository beveragesRepository;
 	
 	@Value( "${current.env}" )
 	private String env;
 	
-	public int addNewItem(Beverages item) {
-		Beverages savedItem = itemsRepository.save(item);
-		return savedItem.getItemId();
+	public int addNewBeverages(Beverages beverages) {
+		Beverages savedBeverages = beveragesRepository.save(beverages);
+		return savedBeverages.getBeveragesId();
 	}
 	
-	public void removeItem(Beverages item) {
-		itemsRepository.delete(item);
+	public void removeBeverages(Beverages beverages) {
+		beveragesRepository.delete(beverages);
 	}
 	
-	public List<Beverages> retriveAllItems() {
+	public List<Beverages> retriveAllBeverages() {
 		if(env.equalsIgnoreCase("mock")) {
 			return data.getData();
 		} else {
-			return itemsRepository.findAll();
+			return beveragesRepository.findAll();
 		}
 	}
 	

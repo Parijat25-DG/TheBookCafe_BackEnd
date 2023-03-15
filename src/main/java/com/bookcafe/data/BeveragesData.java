@@ -14,7 +14,7 @@ public class BeveragesData {
 		List<Beverages> beverages = new ArrayList<>();
 		
 		Beverages item1 = new Beverages();
-		item1.setItemId(201);
+		item1.setBeveragesId(201);
 		item1.setName("Darjeeling Tea");
 		item1.setQuality("Soothing");
 		item1.setDescription("Liquor Blend without Milk");
@@ -24,7 +24,7 @@ public class BeveragesData {
 		beverages.add(item1);
 		
 		Beverages item2 = new Beverages();
-		item2.setItemId(202);
+		item2.setBeveragesId(202);
 		item2.setName("Cappucchino");
 		item2.setQuality("Energizing");
 		item2.setDescription("Milk/Cream Blend");
@@ -34,7 +34,7 @@ public class BeveragesData {
 		beverages.add(item2);
 		
 		Beverages item3 = new Beverages();
-		item3.setItemId(203);
+		item3.setBeveragesId(203);
 		item3.setName("Hot Chocolate");
 		item3.setQuality("Warming");
 		item3.setDescription("Stirred Heavy Cream");
@@ -44,7 +44,7 @@ public class BeveragesData {
 		beverages.add(item3);
 
 		Beverages item4 = new Beverages();
-		item4.setItemId(204);
+		item4.setBeveragesId(204);
 		item4.setName("Espresso");
 		item4.setQuality("Energizing");
 		item4.setDescription("Intense Liquor Blend");
@@ -54,7 +54,7 @@ public class BeveragesData {
 		beverages.add(item4);
 		
 		Beverages item5 = new Beverages();
-		item5.setItemId(205);
+		item5.setBeveragesId(205);
 		item5.setName("Earl Grey");
 		item5.setQuality("Soothing");
 		item5.setDescription("Liquor Blend without Milk");

@@ -3,11 +3,11 @@ package com.bookcafe.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="Items")
+@Document(collection="Beverages")
 public class Beverages {
 	
 	@Id
-	private int itemId;
+	private int beveragesId;
 	private String name;
 	private String quality;
 	private String price;
@@ -15,11 +15,11 @@ public class Beverages {
 	private String accompaniments;
 	private String time;
 	
-	public int getItemId() {
-		return itemId;
+	public int getBeveragesId() {
+		return beveragesId;
 	}
-	public void setItemId(int itemId) {
-		this.itemId = itemId;
+	public void setBeveragesId(int beveragesId) {
+		this.beveragesId = beveragesId;
 	}
 	public String getName() {
 		return name;

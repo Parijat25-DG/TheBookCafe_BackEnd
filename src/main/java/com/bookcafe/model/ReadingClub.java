@@ -3,7 +3,7 @@ package com.bookcafe.model;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection="Readingclub")
+@Document(collection="ReadingClub")
 public class ReadingClub {
 	
 	@Id

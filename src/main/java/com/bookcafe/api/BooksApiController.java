@@ -19,17 +19,17 @@ public class BooksApiController {
 	@Autowired
 	private BookUtil bookUtil;
 	
-	@GetMapping("/getAllBooks")
+	@GetMapping("/books/getAllBooks")
 	public List<Books> findAllBooks(){
 		return bookUtil.retriveAllBooks();
 	}
 	
-	@PostMapping("/addBook")
-	public String addBook(@RequestBody Books book) {
-		return "New Book added with ID : "+bookUtil.addNewBook(book);
+	@PostMapping("/books/addBook")
+	public String addBook(@RequestBody List<Books> books) {
+		return "New Book added with ID : "+ bookUtil.addNewBook(books).stream().toArray();
 	}
 	
-	@PostMapping("/removeBook")
+	@PostMapping("/books/removeBook")
 	public String removeBook(@RequestBody Books book) {
 		bookUtil.removeBook(book);
 		return "Book with ID : "+book.getBookId()+" deleted successfully";

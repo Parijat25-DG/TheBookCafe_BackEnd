@@ -1,5 +1,6 @@
 package com.bookcafe.util;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,9 +23,14 @@ public class BookUtil {
 	@Value( "${current.env}" )
 	private String env;
 	
-	public int addNewBook(Books book) {
-		Books savedBook = booksRepository.save(book);
-		return savedBook.getBookId();
+	public List<Integer> addNewBook(List<Books> books) {
+		List<Integer> savedBooks = new ArrayList<>();
+		books.forEach(book ->{
+			Books savedBook = booksRepository.save(book);
+			savedBooks.add(savedBook.getBookId());
+		});
+		
+		return savedBooks;
 	}
 	
 	public void removeBook(Books book) {

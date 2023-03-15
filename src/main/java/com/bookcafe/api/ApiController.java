@@ -1,7 +1,5 @@
 package com.bookcafe.api;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,24 +9,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bookcafe.dto.Cart;
-import com.bookcafe.dto.Customer;
 import com.bookcafe.dto.Selection;
-import com.bookcafe.model.Books;
-import com.bookcafe.model.Beverages;
-import com.bookcafe.model.CookingClass;
-import com.bookcafe.model.Foods;
 import com.bookcafe.model.Query;
-import com.bookcafe.model.ReadingClub;
-import com.bookcafe.model.User;
-import com.bookcafe.util.BookUtil;
 import com.bookcafe.util.CartUtil;
-import com.bookcafe.util.BeveragesUtil;
-import com.bookcafe.util.CookingClassUtil;
-import com.bookcafe.util.FoodsUtil;
 import com.bookcafe.util.QueryUtil;
-import com.bookcafe.util.ReadingClubUtil;
 import com.bookcafe.util.SelectionUtil;
-import com.bookcafe.util.UserUtil;
 
 @CrossOrigin("*")
 @RestController
