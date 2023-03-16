@@ -154,7 +154,7 @@ public class SelectionUtil {
 				for(Beverages item : itemsRepository.findAll()) {
 					if(item.getBeveragesId()==itemCart.getItemId()) {
 						cartItem.setName(item.getName());
-						cartItem.setAmt(Integer.parseInt(item.getPrice())*itemCart.getItemQuantity());
+						cartItem.setAmt(item.getPrice()*itemCart.getItemQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}
@@ -169,7 +169,7 @@ public class SelectionUtil {
 				for(ReadingClub club : readingclubRepository.findAll()) {
 					if(club.getClubId()==clubCart.getClubId()) {
 						cartItem.setName(club.getBookName()+" For "+club.getSuitableFor());
-						cartItem.setAmt(Integer.parseInt(club.getPrice())*clubCart.getClubQuantity());
+						cartItem.setAmt(club.getPrice()*clubCart.getClubQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}
@@ -184,7 +184,7 @@ public class SelectionUtil {
 				for(CookingClass mclass : masterclassRepository.findAll()) {
 					if(mclass.getClassId()==classCart.getClassId()) {
 						cartItem.setName(mclass.getRecipeName()+" For "+mclass.getSuitableFor());
-						cartItem.setAmt(Integer.parseInt(mclass.getPrice())*classCart.getClassQuantity());
+						cartItem.setAmt(mclass.getPrice()*classCart.getClassQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}
@@ -243,7 +243,7 @@ public class SelectionUtil {
 				for(Beverages item : itemData.getData()) {
 					if(item.getBeveragesId()==itemCart.getItemId()) {
 						cartItem.setName(item.getName());
-						cartItem.setAmt(Integer.parseInt(item.getPrice())*itemCart.getItemQuantity());
+						cartItem.setAmt(item.getPrice()*itemCart.getItemQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}
@@ -258,7 +258,7 @@ public class SelectionUtil {
 				for(ReadingClub club : clubData.getData()) {
 					if(club.getClubId()==clubCart.getClubId()) {
 						cartItem.setName(club.getBookName()+" For "+club.getSuitableFor());
-						cartItem.setAmt(Integer.parseInt(club.getPrice())*clubCart.getClubQuantity());
+						cartItem.setAmt(club.getPrice()*clubCart.getClubQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}
@@ -273,7 +273,7 @@ public class SelectionUtil {
 				for(CookingClass mclass : classData.getData()) {
 					if(mclass.getClassId()==classCart.getClassId()) {
 						cartItem.setName(mclass.getRecipeName()+" For "+mclass.getSuitableFor());
-						cartItem.setAmt(Integer.parseInt(mclass.getPrice())*classCart.getClassQuantity());
+						cartItem.setAmt(mclass.getPrice()*classCart.getClassQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}

@@ -1,5 +1,8 @@
 package com.bookcafe.model;
 
+import java.util.Date;
+
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,13 +10,14 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class CookingClass {
 	
 	@Id
+	private ObjectId _id;
 	private int classId;
 	private String recipeName;
 	private String recipeType;
-	private String scheduledDate;
-	private String seatsAvailable;
+	private Date scheduledDate;
+	private int seatsAvailable;
 	private String suitableFor;
-	private String price;
+	private double price;
 	
 	public int getClassId() {
 		return classId;
@@ -33,16 +37,16 @@ public class CookingClass {
 	public void setRecipeType(String recipeType) {
 		this.recipeType = recipeType;
 	}
-	public String getScheduledDate() {
+	public Date getScheduledDate() {
 		return scheduledDate;
 	}
-	public void setScheduledDate(String scheduledDate) {
+	public void setScheduledDate(Date scheduledDate) {
 		this.scheduledDate = scheduledDate;
 	}
-	public String getSeatsAvailable() {
+	public int getSeatsAvailable() {
 		return seatsAvailable;
 	}
-	public void setSeatsAvailable(String seatsAvailable) {
+	public void setSeatsAvailable(int seatsAvailable) {
 		this.seatsAvailable = seatsAvailable;
 	}
 	public String getSuitableFor() {
@@ -51,10 +55,10 @@ public class CookingClass {
 	public void setSuitableFor(String suitableFor) {
 		this.suitableFor = suitableFor;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 	

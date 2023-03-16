@@ -1,5 +1,6 @@
 package com.bookcafe.model;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -7,9 +8,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Foods {
 	
 	@Id
+	private ObjectId _id;
 	private int foodId;
 	private String name;
-	private String origin;
+	private String cuisine;
 	private String description;
 	private String type;
 	private double price;
@@ -26,11 +28,11 @@ public class Foods {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getOrigin() {
-		return origin;
+	public String getCuisine() {
+		return cuisine;
 	}
-	public void setOrigin(String origin) {
-		this.origin = origin;
+	public void setCuisine(String cuisine) {
+		this.cuisine = cuisine;
 	}
 	public String geType() {
 		return type;
