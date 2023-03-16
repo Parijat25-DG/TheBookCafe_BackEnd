@@ -32,7 +32,7 @@ public class FoodsApiController {
 	@PostMapping("/removeProduct")
 	public String removeProduct(@RequestBody Foods product) {
 		productUtil.removeProduct(product);
-		return "Product with ID : "+product.getProductId()+" deleted successfully";
+		return "Product with ID : "+product.getFoodId()+" deleted successfully";
 	}
 	
 }

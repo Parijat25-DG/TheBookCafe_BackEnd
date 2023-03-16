@@ -114,7 +114,7 @@ public class SelectionUtil {
 		
 		List<CartList> cartList = new ArrayList<>();
 		selection.setCartList(cartList );
-		int totalAmount = 0;
+		double totalAmount = 0;
 		
 		if(savedCart.getBooks() != null && !savedCart.getBooks().isEmpty()) {
 			for(BookCart bookCart : savedCart.getBooks()) {
@@ -124,7 +124,7 @@ public class SelectionUtil {
 				for(Books book : bookRepository.findAll()) {
 					if(book.getBookId()==bookCart.getBookId()) {
 						cartItem.setName(book.getName());
-						cartItem.setAmt(Integer.parseInt(book.getPrice())*bookCart.getBookQuantity());
+						cartItem.setAmt(book.getPrice()*bookCart.getBookQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}
@@ -137,9 +137,9 @@ public class SelectionUtil {
 				cartItem.setId(productCart.getProductId());
 				cartItem.setQuantity(productCart.getProductQuantity());
 				for(Foods product : productsRepository.findAll()) {
-					if(product.getProductId()==productCart.getProductId()) {
+					if(product.getFoodId()==productCart.getProductId()) {
 						cartItem.setName(product.getName());
-						cartItem.setAmt(Integer.parseInt(product.getPrice())*productCart.getProductQuantity());
+						cartItem.setAmt(product.getPrice()*productCart.getProductQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}
@@ -203,7 +203,7 @@ public class SelectionUtil {
 		
 		List<CartList> cartList = new ArrayList<>();
 		selection.setCartList(cartList );
-		int totalAmount = 0;
+		double totalAmount = 0;
 		
 		if(savedCart.getBooks() != null && !savedCart.getBooks().isEmpty()) {
 			for(BookCart bookCart : savedCart.getBooks()) {
@@ -213,7 +213,7 @@ public class SelectionUtil {
 				for(Books book : bookData.getData()) {
 					if(book.getBookId()==bookCart.getBookId()) {
 						cartItem.setName(book.getName());
-						cartItem.setAmt(Integer.parseInt(book.getPrice())*bookCart.getBookQuantity());
+						cartItem.setAmt(book.getPrice()*bookCart.getBookQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}
@@ -226,9 +226,9 @@ public class SelectionUtil {
 				cartItem.setId(productCart.getProductId());
 				cartItem.setQuantity(productCart.getProductQuantity());
 				for(Foods product : productData.getData()) {
-					if(product.getProductId()==productCart.getProductId()) {
+					if(product.getFoodId()==productCart.getProductId()) {
 						cartItem.setName(product.getName());
-						cartItem.setAmt(Integer.parseInt(product.getPrice())*productCart.getProductQuantity());
+						cartItem.setAmt(product.getPrice()*productCart.getProductQuantity());
 						totalAmount = totalAmount + cartItem.getAmt();
 					}
 				}

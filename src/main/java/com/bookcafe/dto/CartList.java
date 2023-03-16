@@ -8,7 +8,7 @@ public class CartList {
 	private int id;
 	private String name;
 	private int quantity;
-	private int amt;
+	private double amt;
 	public int getId() {
 		return id;
 	}
@@ -27,10 +27,10 @@ public class CartList {
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public int getAmt() {
+	public double getAmt() {
 		return amt;
 	}
-	public void setAmt(int amt) {
+	public void setAmt(double amt) {
 		this.amt = amt;
 	}
 	

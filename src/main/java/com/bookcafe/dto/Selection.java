@@ -9,13 +9,13 @@ public class Selection {
 	
 	private int cartId;
 	private List<CartList> cartList;
-	private int totalAmt;
+	private double totalAmt;
 	private int paymentMode;
 	
-	public int getTotalAmt() {
+	public double getTotalAmt() {
 		return totalAmt;
 	}
-	public void setTotalAmt(int totalAmt) {
+	public void setTotalAmt(double totalAmt) {
 		this.totalAmt = totalAmt;
 	}
 	public int getCartId() {

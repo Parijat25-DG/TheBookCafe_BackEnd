@@ -7,18 +7,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Foods {
 	
 	@Id
-	private int productId;
+	private int foodId;
 	private String name;
 	private String origin;
-	private String brief;
 	private String description;
-	private String price;
+	private String type;
+	private double price;
 	
-	public int getProductId() {
-		return productId;
+	public int getFoodId() {
+		return foodId;
 	}
-	public void setProductId(int productId) {
-		this.productId = productId;
+	public void setFoodId(int foodId) {
+		this.foodId = foodId;
 	}
 	public String getName() {
 		return name;
@@ -32,23 +32,23 @@ public class Foods {
 	public void setOrigin(String origin) {
 		this.origin = origin;
 	}
+	public String geType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
+	public double getPrice() {
+		return price;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
-	}
-	public String getPrice() {
-		return price;
-	}
-	public void setPrice(String price) {
-		this.price = price;
-	}
-	public String getBrief() {
-		return brief;
-	}
-	public void setBrief(String brief) {
-		this.brief = brief;
 	}
 
 }

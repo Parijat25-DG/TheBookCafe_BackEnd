@@ -13,9 +13,9 @@ public class Books {
 	private String name;
 	private String author;
 	private String genre;
-	private String price;
+	private double price;
 	private String type;
-	private int languageCode;
+	private String language;
 	
 	public int getBookId() {
 		return bookId;
@@ -41,17 +41,17 @@ public class Books {
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-	public String getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
-	public int getLanguageCode() {
-		return languageCode;
+	public String getLanguage() {
+		return language;
 	}
-	public void setLanguageCode(int languageCode) {
-		this.languageCode = languageCode;
+	public void setLanguage(String language) {
+		this.language = language;
 	}
 	public String getType() {
 		return type;

@@ -18,9 +18,9 @@ public class BookData {
 		book1.setName("Harry Potter");
 		book1.setAuthor("JK Rowling");
 		book1.setGenre("Fantasy");
-		book1.setPrice("50");
+		book1.setPrice(50);
 		book1.setType("Series");
-		book1.setLanguageCode(1);
+		book1.setLanguage("English");
 		books.add(book1);
 		
 		Books book2 = new Books();
@@ -28,9 +28,9 @@ public class BookData {
 		book2.setName("Lord of the Rings");
 		book2.setAuthor("JRR Tolkein");
 		book2.setGenre("Fantasy");
-		book2.setPrice("60");
+		book2.setPrice(60);
 		book2.setType("Series");
-		book2.setLanguageCode(1);
+		book2.setLanguage("English");
 		books.add(book2);
 		
 		Books book3 = new Books();
@@ -38,9 +38,9 @@ public class BookData {
 		book3.setName("Tell Me your Dreams");
 		book3.setAuthor("Sidney Sheldon");
 		book3.setGenre("Thriller");
-		book3.setPrice("40");
-		book3.setType("Novel");
-		book3.setLanguageCode(1);
+		book3.setPrice(40);
+		book3.setType("Solo");
+		book3.setLanguage("English");
 		books.add(book3);
 		
 		Books book4 = new Books();
@@ -48,9 +48,9 @@ public class BookData {
 		book4.setName("Les Misérables");
 		book4.setAuthor("Victor Hugo");
 		book4.setGenre("Drama");
-		book4.setPrice("30");
-		book4.setType("Novel");
-		book4.setLanguageCode(2);
+		book4.setPrice(30);
+		book4.setType("Solo");
+		book4.setLanguage("French");
 		books.add(book4);
 		
 		Books book5 = new Books();
@@ -58,9 +58,9 @@ public class BookData {
 		book5.setName("Don Quixote");
 		book5.setAuthor("Miguel de Cervantes");
 		book5.setGenre("Satire");
-		book5.setPrice("25");
-		book5.setType("Novel");
-		book5.setLanguageCode(3);
+		book5.setPrice(25);
+		book5.setType("Solo");
+		book5.setLanguage("Spanish");
 		books.add(book5);
 		
 		return books;

@@ -24,7 +24,7 @@ public class FoodsUtil {
 	
 	public int addNewProduct(Foods product) {
 		Foods savedProduct = productsRepository.save(product);
-		return savedProduct.getProductId();
+		return savedProduct.getFoodId();
 	}
 	
 	public void removeProduct(Foods product) {

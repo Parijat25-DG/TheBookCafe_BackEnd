@@ -12,35 +12,39 @@ import com.bookcafe.repository.BooksRepository;
 
 @Component
 public class BookUtil {
-	
+
 	@Autowired
 	private BookData data;
-	
+
 	@Autowired
 	private BooksRepository booksRepository;
-	
-	@Value( "${current.env}" )
+
+	@Value("${current.env}")
 	private String env;
-	
+
 	public int addNewBook(Books books) {
 		Books savedBook = booksRepository.save(books);
 		return savedBook.getBookId();
 	}
-	
+
 	public void removeBook(Books book) {
-		booksRepository.delete(book);
+		booksRepository.delete(booksRepository.findByBookId(book.getBookId()));
 	}
-	
-	public List<Books> retriveAllBooks() {
-		if(env.equalsIgnoreCase("mock")) {
+
+	public List<Books> retrieveAllBooks() {
+		if (env.equalsIgnoreCase("mock")) {
 			return data.getData();
 		} else {
 			return booksRepository.findAll();
 		}
 	}
-	
-	public List<Books> findBooksByCriteria( String genre,  String type,  String language) {
-		return booksRepository.findBooksByCriteria(genre, type, 1);
+
+	public List<Books> findBooksByCriteria(String genre, String type, String language) {
+		return booksRepository.findBooksByCriteria(genre, type, language);
 	}
 	
+	public List<Books> findBooksByAuthor(String author) {
+		return booksRepository.findByAuthor(author);
+	}
+
 }
