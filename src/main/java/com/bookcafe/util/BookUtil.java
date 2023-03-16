@@ -1,6 +1,5 @@
 package com.bookcafe.util;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,14 +22,9 @@ public class BookUtil {
 	@Value( "${current.env}" )
 	private String env;
 	
-	public List<Integer> addNewBook(List<Books> books) {
-		List<Integer> savedBooks = new ArrayList<>();
-		books.forEach(book ->{
-			Books savedBook = booksRepository.save(book);
-			savedBooks.add(savedBook.getBookId());
-		});
-		
-		return savedBooks;
+	public int addNewBook(Books books) {
+		Books savedBook = booksRepository.save(books);
+		return savedBook.getBookId();
 	}
 	
 	public void removeBook(Books book) {
@@ -43,6 +37,10 @@ public class BookUtil {
 		} else {
 			return booksRepository.findAll();
 		}
+	}
+	
+	public List<Books> findBooksByCriteria( String genre,  String type,  String language) {
+		return booksRepository.findBooksByCriteria(genre, type, 1);
 	}
 	
 }
