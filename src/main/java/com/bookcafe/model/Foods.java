@@ -14,6 +14,7 @@ public class Foods {
 	private String cuisine;
 	private String description;
 	private String type;
+	private String suitabletime;
 	private double price;
 	
 	public int getFoodId() {
@@ -34,7 +35,13 @@ public class Foods {
 	public void setCuisine(String cuisine) {
 		this.cuisine = cuisine;
 	}
-	public String geType() {
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public String getType() {
 		return type;
 	}
 	public void setType(String type) {
@@ -46,11 +53,11 @@ public class Foods {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getDescription() {
-		return description;
+	public String getSuitabletime() {
+		return suitabletime;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setSuitabletime(String suitabletime) {
+		this.suitabletime = suitabletime;
 	}
-
+	
 }

@@ -13,8 +13,8 @@ public class Beverages {
 	private String name;
 	private String quality;
 	private double price;
-	private String description;
-	private String accompaniments;
+	private boolean lactoseFree;
+	private String temperature;
 	private String suitabletime;
 	
 	public int getBeveragesId() {
@@ -41,17 +41,17 @@ public class Beverages {
 	public void setPrice(double price) {
 		this.price = price;
 	}
-	public String getDescription() {
-		return description;
+	public boolean isLactoseFree() {
+		return lactoseFree;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setLactoseFree(boolean lactoseFree) {
+		this.lactoseFree = lactoseFree;
 	}
-	public String getAccompaniments() {
-		return accompaniments;
+	public String getTemperature() {
+		return temperature;
 	}
-	public void setAccompaniments(String accompaniments) {
-		this.accompaniments = accompaniments;
+	public void setTemperature(String temperature) {
+		this.temperature = temperature;
 	}
 	public String getSuitableTime() {
 		return suitabletime;

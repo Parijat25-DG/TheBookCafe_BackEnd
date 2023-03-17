@@ -23,8 +23,7 @@ public class BookUtil {
 	private String env;
 
 	public int addNewBook(Books books) {
-		Books savedBook = booksRepository.save(books);
-		return savedBook.getBookId();
+		return booksRepository.save(books).getBookId();
 	}
 
 	public void removeBook(Books book) {

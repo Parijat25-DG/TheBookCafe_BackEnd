@@ -12,31 +12,39 @@ import com.bookcafe.repository.BeveragesRepository;
 
 @Component
 public class BeveragesUtil {
-	
+
 	@Autowired
 	private BeveragesData data;
-	
+
 	@Autowired
 	private BeveragesRepository beveragesRepository;
-	
-	@Value( "${current.env}" )
+
+	@Value("${current.env}")
 	private String env;
-	
+
 	public int addNewBeverages(Beverages beverages) {
-		Beverages savedBeverages = beveragesRepository.save(beverages);
-		return savedBeverages.getBeveragesId();
+		return beveragesRepository.save(beverages).getBeveragesId();
 	}
-	
+
 	public void removeBeverages(Beverages beverages) {
-		beveragesRepository.delete(beverages);
+		beveragesRepository.delete(beveragesRepository.findByBeverageId(beverages.getBeveragesId()));
+
 	}
-	
+
 	public List<Beverages> retriveAllBeverages() {
-		if(env.equalsIgnoreCase("mock")) {
+		if (env.equalsIgnoreCase("mock")) {
 			return data.getData();
 		} else {
 			return beveragesRepository.findAll();
 		}
 	}
-	
+
+	public List<Beverages> findBeveragesByCriteria(String suitableTime, String temperature, boolean lactoseFree) {
+		return beveragesRepository.findBeveragesByCriteria(suitableTime, temperature, lactoseFree);
+	}
+
+	public List<Beverages> findBeveragesByQuality(String quality) {
+		return beveragesRepository.findByQuality(quality);
+	}
+
 }
